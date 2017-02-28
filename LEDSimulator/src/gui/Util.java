@@ -7,25 +7,19 @@ public class Util {
 		size[0] = 1;
 		size[1] = numBoxes;
 		for(int i=1; i<=numBoxes; i++){
-			if(checkDivision(numBoxes, i)){
-				
+			int bestscore = numBoxes;
+			if(numBoxes%i == 0){
+				int newScore =  (numBoxes/i + i - 1);
+				if(newScore > bestScore){
+					bestScore = newScore;
+					size[0] = i;
+					size[1] = numBoxes/i;
+				}
 			}
 		}
 		
-		return null;
+		return size;
 	}
 	
-	private static boolean checkDivision(int numBoxes, int i){
-		boolean isSquare;
-		int boxesLeft = numBoxes;
-		while(boxesLeft >i){
-			boxesLeft -= i;
-		}
-		if(boxesLeft==0){
-			isSquare = true;
-		} else {
-			isSquare = false;
-		}
-		return isSquare;
-	}
+	
 }

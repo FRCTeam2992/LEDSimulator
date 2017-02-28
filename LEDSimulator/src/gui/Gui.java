@@ -11,6 +11,6 @@ public class Gui extends JPanel{
 	}
 	
 	public void GuiInit(){
-		
+		Util.calcSize(num);
 	}
 }
