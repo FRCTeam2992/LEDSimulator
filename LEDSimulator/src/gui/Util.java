@@ -10,8 +10,8 @@ public class Util {
 			int bestscore = numBoxes;
 			if(numBoxes%i == 0){
 				int newScore =  (numBoxes/i + i - 1);
-				if(newScore > bestScore){
-					bestScore = newScore;
+				if(newScore > bestscore){
+					bestscore = newScore;
 					size[0] = i;
 					size[1] = numBoxes/i;
 				}
