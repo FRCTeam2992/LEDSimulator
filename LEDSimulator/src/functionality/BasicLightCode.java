@@ -1,6 +1,7 @@
 package functionality;
 
 import java.awt.Color;
+import java.util.Timer;
 import java.util.TimerTask;
 
 import lights.*;
@@ -11,7 +12,6 @@ import lights.*;
  * allows for high level testing, exactly as seen on an arduino with Adafruit neopixels
  * works with only one strip of lights
  * 
- * @todo fix delay() function. doesn't work.
  */
 public class BasicLightCode extends TimerTask{
 
@@ -38,6 +38,7 @@ public class BasicLightCode extends TimerTask{
 			strip.setPixelColor(i, color);
 		}
 		strip.show();
+		delay(1000);
 	}
 
 	
@@ -50,15 +51,11 @@ public class BasicLightCode extends TimerTask{
 		loop();
 		
 	}
-	
-	/* 
+	 
 	private void delay(long milliseconds){
-		try {
-			this.wait(milliseconds);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		double iTime = System.currentTimeMillis();
+		while(System.currentTimeMillis() < iTime + milliseconds){
+			
 		}
 	}
-	*/
 }
